@@ -42,7 +42,9 @@
       <option value="got7">GOT7</option>
       <option value="superjunior">Super Junior</option>
     </select>
-    <input type="number" id="value" placeholder="Enter your coin value" />
+    <label for="value"><strong>Enter coin value (0–2000):</strong></label><br>
+<input type="number" id="value" min="0" max="2000" />
+    
     <button onclick="analyze()">Check Mood</button>
     <div id="output">
       <img id="moodImg" src="" alt="" />
