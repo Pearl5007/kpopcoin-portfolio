@@ -4,59 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KpopCoin Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <canvas id="particles"></canvas>
   <div class="container">
     <h1>KpopCoin Portfolio</h1>
-    <p>Select your favorite K-pop group and enter your coin value:</p>
+
+    <button id="toggleTheme">🌙 Toggle Dark Mode</button>
+
+    <p class="intro">
+      🎶 <strong>Welcome to KpopCoin Portfolio!</strong><br>
+      Track your favorite K-pop groups like crypto coins and get a mood check based on their "coin value." 
+      Enter how you're feeling about your bias today, and get a quote, visual, and song to match your vibe!
+    </p>
+
+    <label for="group"><strong>Select a K-pop group:</strong></label><br>
     <select id="group">
-      <option value="bts">BTS</option>
-      <option value="blackpink">BLACKPINK</option>
-      <option value="straykids">Stray Kids</option>
-      <option value="twice">TWICE</option>
-      <option value="itzy">ITZY</option>
-      <option value="seventeen">SEVENTEEN</option>
-      <option value="enhypen">ENHYPEN</option>
-      <option value="gidle">(G)I-DLE</option>
-      <option value="babymonster">BABYMONSTER</option>
-      <option value="txt">TXT</option>
-      <option value="newjeans">NewJeans</option>
+      <option value="BTS">BTS</option>
+      <option value="BLACKPINK">BLACKPINK</option>
+      <option value="Stray Kids">Stray Kids</option>
+      <option value="TWICE">TWICE</option>
+      <option value="ITZY">ITZY</option>
+      <option value="SEVENTEEN">SEVENTEEN</option>
+      <option value="ENHYPEN">ENHYPEN</option>
+      <option value="(G)I-DLE">(G)I-DLE</option>
+      <option value="BABYMONSTER">BABYMONSTER</option>
+      <option value="TXT">TXT</option>
+      <option value="NewJeans">NewJeans</option>
       <option value="aespa">aespa</option>
-      <option value="ateez">ATEEZ</option>
-      <option value="lesserafim">LE SSERAFIM</option>
-      <option value="ive">IVE</option>
-      <option value="nmixx">NMIXX</option>
-      <option value="nct">NCT</option>
-      <option value="unis">UNIS</option>
-      <option value="illit">ILLIT</option>
-      <option value="exo">EXO</option>
-      <option value="treasure">TREASURE</option>
-      <option value="kissoflife">KISS OF LIFE</option>
-      <option value="mamamoo">MAMAMOO</option>
-      <option value="izone">IZ*ONE</option>
-      <option value="bigbang">BIGBANG</option>
-      <option value="shinee">SHINee</option>
-      <option value="redvelvet">Red Velvet</option>
-      <option value="monstax">MONSTA X</option>
-      <option value="got7">GOT7</option>
-      <option value="superjunior">Super Junior</option>
-    </select>
-    <p style="max-width: 600px; margin: 0 auto 20px; font-size: 1.1rem; text-align: center;">
-    🎶 <strong>Welcome to KpopCoin Portfolio!</strong><br>
-    Track your favorite K-pop groups like crypto coins and get a mood check based on their "coin value from 0-2000." 
-    Enter how you're feeling about your bias today, and get a quote, visual, and song to match your vibe!
-  </p>
+      <option value="ATEEZ">ATEEZ</option>
+      <option value="LE SSERAFIM">LE SSERAFIM</option>
+      <option value="IVE">IVE</option>
+      <option value="NMIXX">NMIXX</option>
+      <option value="NCT">NCT</option>
+      <option value="UNIS">UNIS</option>
+      <option value="ILLIT">ILLIT</option>
+      <option value="EXO">EXO</option>
+      <option value="TREASURE">TREASURE</option>
+      <option value="KISS OF LIFE">KISS OF LIFE</option>
+      <option value="MAMAMOO">MAMAMOO</option>
+      <option value="IZ*ONE">IZ*ONE</option>
+      <option value="BIGBANG">BIGBANG</option>
+      <option value="SHINee">SHINee</option>
+      <option value="Red Velvet">Red Velvet</option>
+      <option value="MONSTA X">MONSTA X</option>
+      <option value="GOT7">GOT7</option>
+      <option value="Super Junior">Super Junior</option>
+    </select><br>
+
     <label for="value"><strong>Enter coin value (0–2000):</strong></label><br>
-<input type="number" id="value" min="0" max="2000" />
-    
-    <button onclick="analyze()">Check Mood</button>
-    <div id="output">
-      <img id="moodImg" src="" alt="" />
-      <p id="quote"></p>
-      <iframe id="video" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <input type="number" id="value" min="0" max="2000" /><br>
+
+    <button onclick="analyze()">Check Mood</button><br>
+
+    <img id="moodImg" src="" alt="Mood Image" style="display: none;" />
+    <p id="quote"></p>
+    <iframe id="video" style="display: none;" allowfullscreen></iframe>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
