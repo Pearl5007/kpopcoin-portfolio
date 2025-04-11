@@ -1,36 +1,108 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fbeaff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ffe0ec, #f9f0ff, #f3e5f5, #fce4ec);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
   color: #333;
   text-align: center;
-  padding: 20px;
+  transition: background 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
 }
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
 .container {
-  max-width: 800px;
-  margin: auto;
+  max-width: 700px;
+  margin: 60px auto;
+  background-color: #ffffffee;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-select, input {
+
+body.dark-mode .container {
+  background-color: #1e1e1e;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d63384;
+}
+
+.intro {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+select, input[type="number"] {
   padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
   margin: 10px;
-  font-size: 16px;
-}
-button {
-  padding: 10px 20px;
-  background-color: #ff7eb9;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-}
-#output {
-  margin-top: 30px;
-}
-#output img {
+  font-size: 1rem;
+  width: 80%;
   max-width: 300px;
-  display: block;
-  margin: auto;
-  border-radius: 10px;
 }
-iframe {
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  background: #d63384;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
   margin-top: 20px;
+}
+
+button:hover {
+  background: #ad1f66;
+}
+
+#moodImg {
+  width: 80%;
+  max-width: 300px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 20px;
+  color: #444;
+}
+
+#video {
+  margin-top: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
 }
