@@ -4,68 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>KpopCoin Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <canvas id="particles"></canvas>
   <div class="container">
-    <h1>KpopCoin Portfolio</h1>
+    <h1><i class="fa-solid fa-music"></i> KpopCoin Portfolio</h1>
+    <p class="subheading">Top 20 K-pop Groups by Popularity</p>
 
-    <button id="toggleTheme">🌙 Toggle Dark Mode</button>
-    
-
-    <p class="intro">
-      🎶 <strong>Welcome to KpopCoin Portfolio!</strong><br>
-      Track your favorite K-pop groups like crypto coins and get a mood check based on their "coin value." 
-      Enter how you're feeling about your bias today, and get a quote, visual, and song to match your vibe!
-    </p>
-
-    <label for="group"><strong>Select a K-pop group:</strong></label><br>
-    <select id="group">
-      <option value="BTS">BTS</option>
-      <option value="BLACKPINK">BLACKPINK</option>
-      <option value="Stray Kids">Stray Kids</option>
-      <option value="TWICE">TWICE</option>
-      <option value="ITZY">ITZY</option>
-      <option value="SEVENTEEN">SEVENTEEN</option>
-      <option value="ENHYPEN">ENHYPEN</option>
-      <option value="(G)I-DLE">(G)I-DLE</option>
-      <option value="BABYMONSTER">BABYMONSTER</option>
-      <option value="TXT">TXT</option>
-      <option value="NewJeans">NewJeans</option>
-      <option value="aespa">aespa</option>
-      <option value="ATEEZ">ATEEZ</option>
-      <option value="LE SSERAFIM">LE SSERAFIM</option>
-      <option value="IVE">IVE</option>
-      <option value="NMIXX">NMIXX</option>
-      <option value="NCT">NCT</option>
-      <option value="UNIS">UNIS</option>
-      <option value="ILLIT">ILLIT</option>
-      <option value="EXO">EXO</option>
-      <option value="TREASURE">TREASURE</option>
-      <option value="KISS OF LIFE">KISS OF LIFE</option>
-      <option value="MAMAMOO">MAMAMOO</option>
-      <option value="IZ*ONE">IZ*ONE</option>
-      <option value="BIGBANG">BIGBANG</option>
-      <option value="SHINee">SHINee</option>
-      <option value="Red Velvet">Red Velvet</option>
-      <option value="MONSTA X">MONSTA X</option>
-      <option value="GOT7">GOT7</option>
-      <option value="Super Junior">Super Junior</option>
-    </select><br>
-
-    <label for="value"><strong>Enter coin value (0–2000):</strong></label><br>
-    <input type="number" id="value" min="0" max="2000" /><br>
-
-    <button id="checkMoodBtn">Check Mood</button>
-
-    <img id="moodImg" src="" alt="Mood Image" style="display: none;" />
-    <p id="quote"></p>
-    <iframe id="video" style="display: none;" allowfullscreen></iframe>
+    <div id="kpop-list" class="card-grid"></div>
   </div>
 
-  
   <script src="kpopcoin_script.js"></script>
 </body>
 </html>
