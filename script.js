@@ -1,4 +1,84 @@
-const kpopThemes = {
+const moods = {
+  happy: {
+    quote: "You're shining bright like a star!",
+    img: "https://i.imgur.com/Jj5l4XG.png",
+    video: "https://www.youtube.com/embed/2S24-y0Ij3Y"
+  },
+  chill: {
+    quote: "Just vibing~",
+    img: "https://i.imgur.com/fRG8Znb.png",
+    video: "https://www.youtube.com/embed/YudHcBIxlYw"
+  },
+  energetic: {
+    quote: "The world is yours, go own it!",
+    img: "https://i.imgur.com/dkq0Vag.png",
+    video: "https://www.youtube.com/embed/7C2z4GqqS5E"
+  },
+  sad: {
+    quote: "It’s okay not to be okay. You got this.",
+    img: "https://i.imgur.com/UKI5RxD.png",
+    video: "https://www.youtube.com/embed/dISNgvVpWlo"
+  }
+};
+
+function analyze() {
+  const value = parseInt(document.getElementById('value').value);
+  const mood = value >= 1500 ? 'happy' : value >= 1000 ? 'energetic' : value >= 500 ? 'chill' : 'sad';
+  document.getElementById('moodImg').src = moods[mood].img;
+  document.getElementById('moodImg').style.display = 'block';
+  document.getElementById('quote').textContent = moods[mood].quote;
+  document.getElementById('video').src = moods[mood].video;
+  document.getElementById('video').style.display = 'block';
+}
+
+// Dark mode toggle
+document.getElementById("toggleTheme").onclick = () => {
+  document.body.classList.toggle("dark-mode");
+};
+
+// Particle canvas animation
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const particles = [];
+
+function Particle() {
+  this.x = Math.random() * canvas.width;
+  this.y = Math.random() * canvas.height;
+  this.size = Math.random() * 10 + 5;
+  this.speedY = Math.random() * 1 + 0.5;
+  this.emoji = ["✨", "💖", "🎵", "🌟", "💫"][Math.floor(Math.random() * 5)];
+}
+
+Particle.prototype.draw = function() {
+  ctx.font = `${this.size}px sans-serif`;
+  ctx.fillText(this.emoji, this.x, this.y);
+};
+
+Particle.prototype.update = function() {
+  this.y += this.speedY;
+  if (this.y > canvas.height) {
+    this.y = -this.size;
+    this.x = Math.random() * canvas.width;
+  }
+  this.draw();
+};
+
+function initParticles() {
+  for (let i = 0; i < 30; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => p.update());
+  requestAnimationFrame(animateParticles);
+}
+
+initParticles();
+animateParticles();const kpopThemes = {
   bts: {
     high: {
       img: "https://placehold.co/300x200?text=BTS+High",
