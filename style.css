@@ -1,0 +1,36 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fbeaff;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+select, input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+}
+button {
+  padding: 10px 20px;
+  background-color: #ff7eb9;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+#output {
+  margin-top: 30px;
+}
+#output img {
+  max-width: 300px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+iframe {
+  margin-top: 20px;
+}
