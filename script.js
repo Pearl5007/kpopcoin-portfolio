@@ -1,3 +1,41 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const themeBtn = document.getElementById("toggleTheme");
+    const body = document.body;
+
+    themeBtn.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+    });
+
+    window.analyze = function () {
+        const group = document.getElementById("group").value;
+        const value = parseInt(document.getElementById("value").value);
+        const quote = document.getElementById("quote");
+        const img = document.getElementById("moodImg");
+        const video = document.getElementById("video");
+
+        if (!group || isNaN(value)) {
+            alert("Please select a group and enter a valid value.");
+            return;
+        }
+
+        let mood = value > 1500 ? "high" : value > 700 ? "mid" : "low";
+        const data = groupData[group][mood];
+
+        quote.textContent = `"${data.quote}"`;
+        img.src = data.image;
+        img.classList.remove("show");
+        video.src = data.video;
+        video.classList.remove("show");
+
+        // Animate elements after slight delay
+        setTimeout(() => {
+            img.style.display = "block";
+            video.style.display = "block";
+            img.classList.add("show");
+            video.classList.add("show");
+        }, 100);
+    };
+});
 const groupData = {
   BTS: {
     high: {
