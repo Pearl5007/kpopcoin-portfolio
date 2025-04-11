@@ -1,100 +1,56 @@
-
-
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 0;
-  transition: background-color 0.6s ease, color 0.6s ease;
-  background-color: #ffffff;
-  color: #222222;
-  position: relative;
-  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #1e1e3f, #2d2d6e);
+  color: white;
 }
 
-body.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   margin-bottom: 10px;
-  text-align: center;
-  transition: color 0.5s ease;
 }
 
-button {
-  font-size: 1em;
-  padding: 10px 20px;
-  margin: 10px;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  background: linear-gradient(145deg, #f09, #3023ae);
-  color: white;
-  transition: background 0.4s ease, transform 0.2s ease;
+.subheading {
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
-button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(145deg, #3023ae, #f09);
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
 }
 
-select, input[type="number"] {
-  padding: 10px;
-  font-size: 1em;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  transition: border 0.3s ease;
-}
-
-select:focus, input[type="number"]:focus {
-  border: 1px solid #3023ae;
-  outline: none;
-}
-
-img#moodyImg, iframe {
-  max-width: 90%;
-  margin-top: 20px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.7s ease;
-}
-
-.show {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-.dark-mode button {
-  background: linear-gradient(145deg, #bb86fc, #3700b3);
-}
-
-.dark-mode button:hover {
-  background: linear-gradient(145deg, #3700b3, #bb86fc);
-}
-
-.dark-mode select, .dark-mode input {
-  background-color: #2a2a2a;
-  color: #f0f0f0;
-  border-color: #555;
-}
-
-.dark-mode .quote {
-  color: #ddd;
-}
-
-.result-card {
-  margin-top: 20px;
-  padding: 20px;
+.card {
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  background-color: #f5f5f5;
-  transition: background-color 0.5s ease, transform 0.3s ease;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-.dark-mode .result-card {
-  background-color: #1f1f1f;
+.card:hover {
+  transform: translateY(-10px);
 }
+
+.card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card .coin {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+
