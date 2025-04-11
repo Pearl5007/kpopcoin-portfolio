@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleThemeBtn = document.getElementById("toggleTheme");
+
+  toggleThemeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+});
 document.addEventListener("DOMContentLoaded", function () {
     const themeBtn = document.getElementById("toggleTheme");
     const body = document.body;
@@ -546,4 +553,19 @@ const groupData = {
       video: "https://www.youtube.com/embed/5jGCuhxLzR0"
     }
   }
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
